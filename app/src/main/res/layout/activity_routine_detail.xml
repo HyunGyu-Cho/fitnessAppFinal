@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textRoutineDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="0000년 00월 00일 오늘의 운동루틴입니다."
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutRoutineName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="루틴명"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/textRoutineDate"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editRoutineName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ListView
+        android:id="@+id/listRoutineExercises"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutRoutineName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@id/textExerciseClickInfo"/>
+
+    <TextView
+        android:id="@+id/textExerciseClickInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="운동명을 클릭하면 상세정보를 볼 수 있습니다."
+        android:textSize="14sp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@id/btnUpdateRoutineName"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUpdateRoutineName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="루틴명 수정하기"
+        style="?attr/materialButtonOutlinedStyle"
+        app:layout_constraintBottom_toTopOf="@id/btnDeleteRoutine"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDeleteRoutine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="루틴 삭제하기"
+        style="?attr/materialButtonOutlinedStyle"
+        app:layout_constraintBottom_toTopOf="@id/btnAddExercise"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddExercise"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="운동 추가하기"
+        style="?attr/materialButtonOutlinedStyle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
